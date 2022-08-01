@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:56:30 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/07/06 19:24:17 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/01 15:42:46 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,13 @@ int	main(int argc, char **argv)
 	}
 	if (check_doubles(stack_a))
 		return (0);
-	if (is_sorted(stack_a))
-		printf("sorted\n");
-	else
-		printf("not sorted\n");
+	// if (is_sorted(stack_a))
+	// 	printf("sorted\n");
+	// else
+	// 	printf("not sorted\n");
+	if (!is_sorted(stack_a))
+		sort_2(stack_a);
+	//sorting_tree(&stack_a, &stack_b);
 	print_list(stack_a);
 	return (0);
 }

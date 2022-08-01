@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 18:28:09 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/07/06 19:22:55 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/01 15:22:24 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ void	insert_end(t_list **first, int val)
 {
 	t_list	*new_el;
 	t_list	*current;
-	
+
 	current = *first;
 	new_el = (t_list *)malloc(sizeof(t_list));
 	if (!new_el)
-		return;
+		return ;
 	new_el->number = val;
 	new_el->next = NULL;
 	if (*first == NULL)
 	{
 		*first = new_el;
-		return;
+		return ;
 	}
 	while (current->next != NULL)
 		current = current->next;
@@ -92,7 +92,7 @@ int	check_doubles(t_list *stack)
 		{
 			if (tmp->number == stack->number)
 			{
-				printf("double input\n");	
+				printf("double input\n");
 				return (1);
 			}
 			tmp = tmp->next;

@@ -1,52 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sorted.c                                           :+:    :+:            */
+/*   sorting_small.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/06 13:56:30 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/01 16:27:14 by emlicame      ########   odam.nl         */
+/*   Created: 2022/08/01 15:35:46 by emlicame      #+#    #+#                 */
+/*   Updated: 2022/08/01 15:50:03 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	is_sorted(t_list *stack)
+void	sort_2(t_list *stack)
 {
-	t_list	*tmp;
+	t_list	*temp;
 
-	while (stack->next)
+	if (!is_sorted(stack))
 	{
-		tmp = stack->next;
-		if (stack->number > tmp->number)
-			return (0);
-		stack = stack->next;
+		temp = stack->next;
+		stack->next = stack->next->next;
+		stack->next->next = temp;
 	}
-	return (1);
 }
 
-//test printing
-void	print_list(t_list *stack)
-{
-	t_list	*curr;
-
-	curr = stack;
-	while (curr != NULL)
-	{
-		printf("%d ", curr->number);
-		curr = curr->next;
-	}
-	printf("\n");
-}
 
 /*
--15	2	0	60
-0	2	1	3
-0	1	2	3
--15	0	2	60
-4
-4 /2
-2 3
-0 1
+void	sorting_tree(t_list **stack_a, t_list **stack_b)
+{
+	if ()
+	{
+		sort_2
+	}
+}
+
+void		sort_2(t_stack **stack)
+{
+	if ((*stack)->val > (*stack)->next->val)
+
+}
 */
