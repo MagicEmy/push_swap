@@ -4,7 +4,9 @@ HEADERS	:=	includes/push_swap.h
 SRC		:=	push_swap.c \
 			input.c	\
 			sorted.c \
-			sorting_small.c
+			sorting_small.c \
+			list.c \
+			actions.c
 
 OBJ		:= $(SRC:%.c=obj/%.o)
 CC		:= gcc
