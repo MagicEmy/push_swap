@@ -6,18 +6,45 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/01 15:35:46 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/03 17:54:46 by emanuela      ########   odam.nl         */
+/*   Updated: 2022/08/05 16:44:09 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	sort_5(t_list **stack_a, t_list **stack_b)
+{
+	int	min;
+	int	max;
+	int	n1;
+	int	n5;
+
+	min = find_min(stack_a);
+	max = find_max(stack_a);
+	n1 = (*stack_a)->number;
+	n5 = (*stack_a)->next->next->next->next->number;
+	while (list_size(*stack_a) > 3)
+	{
+		if ((*stack_a)->number == min || (*stack_a)->number == max)
+			push_to_b(stack_a, stack_b);
+		else
+			rotate(stack_a);
+	}
+	sort_3(stack_a);
+	push_to_a(stack_b, stack_a);
+	if ((*stack_a)->number > (*stack_a)->next->number)
+		rotate(stack_a);
+	push_to_a(stack_b, stack_a);
+	if ((*stack_a)->number > (*stack_a)->next->number)
+		rotate(stack_a);
+}
 
 void	sort_3(t_list **stack_a)
 {
 	int	num1;
 	int	num2;
 	int	num3;
-	
+
 	num1 = (*stack_a)->number;
 	num2 = (*stack_a)->next->number;
 	num3 = (*stack_a)->next->next->number;
@@ -37,20 +64,4 @@ void	sort_3(t_list **stack_a)
 		swap(stack_a);
 		rev_rotate(stack_a);
 	}
-}
-
-void	sorting_tree(t_list **stack_a, t_list **stack_b)
-{
-	if (is_sorted(*stack_a))
-		return ;
-	else if (list_size(*stack_a) == 2)
-		rotate(stack_a);
-	else if (list_size(*stack_a) == 3)
-		sort_3(stack_a);
-	else if (list_size(*stack_a) <= 5)
-		rotate(stack_b); 
-	// else if (list_size(stack_a) <= 100)
-	// 	sort_100(stack_a, stack_b);
-	// else if (list_size(stack_a) <= 500)
-	// 	sort_500(stack_a, stack_b);
 }

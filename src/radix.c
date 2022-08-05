@@ -6,10 +6,11 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/01 16:07:41 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/01 16:25:27 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/04 13:00:28 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include<stdio.h>
 
 int	main(void)
@@ -78,3 +79,4 @@ if current > next
 
 
 
+*/

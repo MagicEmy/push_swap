@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 18:26:42 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/03 17:42:04 by emanuela      ########   odam.nl         */
+/*   Updated: 2022/08/05 19:39:41 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-
+# include<limits.h>
 
 typedef struct s_list
 {
@@ -24,17 +24,31 @@ typedef struct s_list
 	struct s_list	*next;
 }t_list;
 
-int		ft_atoi(char *str);
+//input check
+int		check_input(t_list **stack_a, char **argv);
 int		check_digit(char *av_x);
 int		check_doubles(t_list *stack);
+void	error_and_free(t_list *stack_a, t_list *stack_b);
+//lists
 void	insert_end(t_list **first, int val);
 t_list	*list_last(t_list *stack);
 int		is_sorted(t_list *stack);
 void	print_list(t_list *stack);
-int 	list_size(t_list *stack_a);
+int		list_size(t_list *stack_a);
+void	list_addfront(t_list *lst, t_list *new);
+void	list_clear(t_list **lst);
+//sorting
 void	sorting_tree(t_list **stack_a, t_list **stack_b);
 void	sort_3(t_list **stack_a);
+void	sort_5(t_list **stack_a, t_list **stack_b);
+//actions
 void	swap(t_list **stack);
 void	rotate(t_list **stack);
 void	rev_rotate(t_list **stack);
+void	push_to_b(t_list **from, t_list **to);
+void	push_to_a(t_list **from, t_list **to);
+//utils
+int		ft_atoi(char *str);
+int		find_min(t_list **stack);
+int		find_max(t_list **stack);
 #endif

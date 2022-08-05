@@ -6,7 +6,7 @@
 /*   By: emanuela <emanuela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/03 12:46:09 by emanuela      #+#    #+#                 */
-/*   Updated: 2022/08/03 17:31:30 by emanuela      ########   odam.nl         */
+/*   Updated: 2022/08/05 16:32:03 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	swap(t_list **stack)
 	second = (*stack)->next->number;
 	(*stack)->number = second;
 	(*stack)->next->number = first;
-	write(2, "sa\n", 3);
+	write(1, "sa\n", 3);
 }
 
 void	rotate(t_list **stack)
@@ -34,7 +34,7 @@ void	rotate(t_list **stack)
 	*stack = first->next;
 	first->next = NULL;
 	last->next = first;
-	write(2, "ra\n", 3);
+	write(1, "ra\n", 3);
 }
 
 void	rev_rotate(t_list **stack)
@@ -52,18 +52,28 @@ void	rev_rotate(t_list **stack)
 	last->next = *stack;
 	temp->next = NULL;
 	*stack = last;
-	write(2, "rra\n", 4);
+	write(1, "rra\n", 4);
 }
 
-/*
-void	rotate(t_list **stack)
+//remove from top a add on top b
+void	push_to_b(t_list **from, t_list **to)
 {
-	t_list	*last;
+	t_list	*temp;
 
-	last = list_last(*stack);
-	last->next = *stack;
-	*stack = (*stack)->next;
-	last->next->next = NULL;
-	write(2, "ra\n", 3);
+	temp = (*from)->next;
+	(*from)->next = *to;
+	*to = *from;
+	*from = temp;
+	write(1, "pb\n", 3);
 }
-*/
+
+void	push_to_a(t_list **from, t_list **to)
+{
+	t_list	*temp;
+
+	temp = (*from)->next;
+	(*from)->next = *to;
+	*to = *from;
+	*from = temp;
+	write(1, "pa\n", 3);
+}
