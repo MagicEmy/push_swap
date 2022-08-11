@@ -6,11 +6,27 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:22:25 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/04 14:28:00 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/11 19:01:27 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	find_min_index(t_list *stack)
+{
+	int		min;
+	t_list	*temp;
+
+	temp = stack;
+	min = INT_MAX;
+	while (temp)
+	{
+		if (temp->number < min && temp->index < 0)
+			min = temp->number;
+		temp = temp->next;
+	}
+	return (min);
+}
 
 int	find_min(t_list **stack)
 {

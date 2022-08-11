@@ -6,7 +6,7 @@
 /*   By: emanuela <emanuela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/02 13:20:13 by emanuela      #+#    #+#                 */
-/*   Updated: 2022/08/05 19:40:53 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/11 18:52:49 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	insert_end(t_list **first, int val)
 	if (!new_el)
 		return ;
 	new_el->number = val;
+	new_el->index = -1;
 	new_el->next = NULL;
 	if (*first == NULL)
 	{

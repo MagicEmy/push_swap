@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 18:26:42 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/11 15:06:01 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/11 18:47:32 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,14 @@ void	print_list(t_list *stack);
 int		list_size(t_list *stack_a);
 void	list_addfront(t_list *lst, t_list *new);
 void	list_clear(t_list **lst);
-int		index_list(t_list *stack);
+//indexing
+void	index_list(t_list *stack);
 void	print_index(t_list *stack);
-void	sort_index(t_list *stack);
-void	swap_index(t_list *stack);
+int		find_min_index(t_list *stack);
+
+//void	sort_index(t_list *stack);
+//void	swap_index(t_list *stack);
+//void	index_sorted_list(t_list *stack);
 
 //sorting
 void	sorting_tree(t_list **stack_a, t_list **stack_b);
