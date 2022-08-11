@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/01 16:07:41 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/04 13:00:28 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/11 14:58:25 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,19 +64,32 @@ if current > next
 	
 //push back
 // value = value *2
+/*
+/*
+void	sort_index(t_list *stack)
+{
+	int		len;
+	t_list	*curr;
 
+	len = list_size(stack);
+	curr = stack;
+	while (len > 0)
+	{
+		if (stack->index > stack->next->index)
+			swap_index(stack);
+		curr = curr->next;
+		len--;
+	}
+}
 
+void	swap_index(t_list *stack)
+{
+	int	first;
+	int	second;
 
-
-
-
-2
-1
-1
-1
-1
-0000000001
-
-
-
+	first = stack->index;
+	second = stack->next->index;
+	stack->index = second;
+	stack->next->index = first;
+}
 */

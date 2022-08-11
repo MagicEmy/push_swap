@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 18:26:42 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/05 19:39:41 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/11 15:06:01 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_list
 {
 	int				number;
+	int				index;
 	struct s_list	*next;
 }t_list;
 
@@ -37,6 +38,11 @@ void	print_list(t_list *stack);
 int		list_size(t_list *stack_a);
 void	list_addfront(t_list *lst, t_list *new);
 void	list_clear(t_list **lst);
+int		index_list(t_list *stack);
+void	print_index(t_list *stack);
+void	sort_index(t_list *stack);
+void	swap_index(t_list *stack);
+
 //sorting
 void	sorting_tree(t_list **stack_a, t_list **stack_b);
 void	sort_3(t_list **stack_a);

@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/01 15:35:46 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/05 16:44:09 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/10 14:34:00 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,9 @@ void	sort_5(t_list **stack_a, t_list **stack_b)
 {
 	int	min;
 	int	max;
-	int	n1;
-	int	n5;
 
 	min = find_min(stack_a);
 	max = find_max(stack_a);
-	n1 = (*stack_a)->number;
-	n5 = (*stack_a)->next->next->next->next->number;
 	while (list_size(*stack_a) > 3)
 	{
 		if ((*stack_a)->number == min || (*stack_a)->number == max)

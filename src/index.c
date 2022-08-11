@@ -1,52 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sorted.c                                           :+:    :+:            */
+/*   index.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/06 13:56:30 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/10 14:20:33 by emlicame      ########   odam.nl         */
+/*   Created: 2022/08/10 14:19:28 by emlicame      #+#    #+#                 */
+/*   Updated: 2022/08/11 15:06:54 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	is_sorted(t_list *stack)
+int	index_list(t_list *stack)
 {
-	t_list	*tmp;
+	int		i;
+	t_list	*curr;
+	int		*index_array;
 
-	while (stack->next)
+	i = 0;
+	curr = stack;
+	while (curr != NULL)
 	{
-		tmp = stack->next;
-		if (stack->number > tmp->number)
-			return (0);
-		stack = stack->next;
+		curr->index = i;
+		curr = curr->next;
+		i++;
 	}
-	return (1);
+	index_array = (int *)malloc(sizeof(int) * i);
+	if (!index_array)
+		return (0);
 }
 
-//test printing
-void	print_list(t_list *stack)
+void	print_index(t_list *stack)
 {
 	t_list	*curr;
 
 	curr = stack;
 	while (curr != NULL)
 	{
-		printf("%d ", curr->number);
+		printf("%d ", curr->index);
 		curr = curr->next;
 	}
 	printf("\n");
 }
-
-/*
--15	2	0	60
-0	2	1	3
-0	1	2	3
--15	0	2	60
-4
-4 /2
-2 3
-0 1
-*/

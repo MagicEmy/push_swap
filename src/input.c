@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 18:28:09 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/05 19:43:44 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/11 15:04:44 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ int	check_input(t_list **stack_a, char **argv)
 	}
 	if (check_doubles(*stack_a))
 		return (0);
+	index_list(*stack_a);
 	return (1);
 }

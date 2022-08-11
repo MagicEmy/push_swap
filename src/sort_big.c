@@ -1,52 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sorted.c                                           :+:    :+:            */
+/*   sort_big.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/06 13:56:30 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/10 14:20:33 by emlicame      ########   odam.nl         */
+/*   Created: 2022/08/10 14:31:37 by emlicame      #+#    #+#                 */
+/*   Updated: 2022/08/11 14:53:26 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	is_sorted(t_list *stack)
-{
-	t_list	*tmp;
-
-	while (stack->next)
-	{
-		tmp = stack->next;
-		if (stack->number > tmp->number)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
-}
-
-//test printing
-void	print_list(t_list *stack)
-{
-	t_list	*curr;
-
-	curr = stack;
-	while (curr != NULL)
-	{
-		printf("%d ", curr->number);
-		curr = curr->next;
-	}
-	printf("\n");
-}
-
 /*
--15	2	0	60
-0	2	1	3
-0	1	2	3
--15	0	2	60
-4
-4 /2
-2 3
-0 1
+void	sort_100(t_list **stack_a, t_list **stack_b)
+{
+	int	min;
+	int	max;
+
+	min = find_min(stack_a);
+	max = find_max(stack_a);
+	while ()
+	{
+		if ()
+			push_to_b(stack_a, stack_b);
+		else
+			rotate(stack_a);
+	}
+	while (stack_b)
+		push_to_a(stack_b, stack_a);
+}
 */

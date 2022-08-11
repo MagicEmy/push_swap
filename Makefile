@@ -6,7 +6,10 @@ SRC		:=	push_swap.c \
 			sorted.c \
 			sorting_small.c \
 			list.c \
-			actions.c
+			actions.c \
+			utils.c \
+			index.c \
+			sort_big.c
 
 OBJ		:= $(SRC:%.c=obj/%.o)
 CC		:= gcc
