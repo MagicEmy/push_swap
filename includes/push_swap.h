@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 18:26:42 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/11 18:47:32 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/12 15:42:16 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,12 @@ void	index_list(t_list *stack);
 void	print_index(t_list *stack);
 int		find_min_index(t_list *stack);
 
-//void	sort_index(t_list *stack);
-//void	swap_index(t_list *stack);
-//void	index_sorted_list(t_list *stack);
-
 //sorting
 void	sorting_tree(t_list **stack_a, t_list **stack_b);
 void	sort_3(t_list **stack_a);
 void	sort_5(t_list **stack_a, t_list **stack_b);
+void	sort_big(t_list **stack_a, t_list **stack_b);
+void	radix(t_list **stack_a, t_list **stack_b, int bits);
 //actions
 void	swap(t_list **stack);
 void	rotate(t_list **stack);

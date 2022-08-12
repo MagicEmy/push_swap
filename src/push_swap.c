@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:56:30 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/11 19:12:48 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/12 14:47:49 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,9 @@ void	sorting_tree(t_list **stack_a, t_list **stack_b)
 		sort_3(stack_a);
 	else if (list_size(*stack_a) <= 5)
 		sort_5(stack_a, stack_b);
+	else if (list_size(*stack_a) > 5)
+		sort_big(stack_a, stack_b);
 }
-	// else if (list_size(stack_a) <= 100)
-	// 	sort_100(stack_a, stack_b);
-	// else if (list_size(stack_a) <= 500)
-	// 	sort_500(stack_a, stack_b);
 
 int	main(int argc, char **argv)
 {
@@ -48,7 +46,8 @@ int	main(int argc, char **argv)
 		return (0);
 	if (!check_input(&stack_a, argv))
 		return (0);
-//	print_index(stack_a);
+	print_list(stack_a);
+	print_index(stack_a);
 	sorting_tree(&stack_a, &stack_b);
 	print_list(stack_a);
 	print_index(stack_a);

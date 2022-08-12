@@ -5,91 +5,41 @@
 /*                                                     +:+                    */
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/01 16:07:41 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/11 14:58:25 by emlicame      ########   odam.nl         */
+/*   Created: 2022/08/12 14:32:10 by emlicame      #+#    #+#                 */
+/*   Updated: 2022/08/12 15:50:47 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include<stdio.h>
+#include "../includes/push_swap.h"
 
-int	main(void)
+void	sort_big(t_list **stack_a, t_list **stack_b)
 {
-	printf("%d\n", 1 & 5); >> << 
-	return (0);
-}
-
-while lists != NULL
-if current > next
-	not sorted
-
-//if (value & 1) == 0
-	// push to b
-//0101 5  &
-					//0100 4
-//0011 3
-					//0010 2
-//0001 1
-//push back
-// value = value *2
-
-//if (value & 2) == 0
-	// push to b
-
-//0010 2
-	//0100 4
-	//0101 5				
-//0011 3			
-	//0001 1
-//push back
-// value = value *2
-
-//if (value & 4) == 0
-	// push to b
-//0100 4
-//0101 5
-		//0001 1
-//0010 2
-	//0011 3			
+	int	bits;
+	int	max;
 	
-//push back
-// value = value *2
-//if (value & 4) == 0
-	// push to b
-//0100 4
-//0101 5
-		//0001 1
-//0010 2
-	//0011 3			
-	
-//push back
-// value = value *2
-/*
-/*
-void	sort_index(t_list *stack)
-{
-	int		len;
-	t_list	*curr;
-
-	len = list_size(stack);
-	curr = stack;
-	while (len > 0)
+	max = list_size(*stack_a) - 1;
+	bits = 0;
+	while (max >> bits != 0)
 	{
-		if (stack->index > stack->next->index)
-			swap_index(stack);
-		curr = curr->next;
-		len--;
+		if(is_sorted(*stack_a))
+			break;
+		radix(stack_a, stack_b, bits);
+		bits++;
 	}
 }
 
-void	swap_index(t_list *stack)
+void	radix(t_list **stack_a, t_list **stack_b, int bits)
 {
-	int	first;
-	int	second;
-
-	first = stack->index;
-	second = stack->next->index;
-	stack->index = second;
-	stack->next->index = first;
+	int	len;
+	
+	len = list_size(*stack_a);
+	while(len--)
+		{
+			if(((*stack_a)->index >> bits)&& 1)
+				push_to_b(stack_a, stack_b);
+			else
+				rotate(stack_a);
+		}
+		while (stack_b)
+			push_to_a(stack_b, stack_a);
 }
-*/
