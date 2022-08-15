@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 18:26:42 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/12 15:42:16 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/15 19:43:46 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ void	print_list(t_list *stack);
 int		list_size(t_list *stack_a);
 void	list_addfront(t_list *lst, t_list *new);
 void	list_clear(t_list **lst);
+t_list	*ft_lstnew(int value);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+
 //indexing
 void	index_list(t_list *stack);
 void	print_index(t_list *stack);
@@ -48,13 +51,14 @@ void	sorting_tree(t_list **stack_a, t_list **stack_b);
 void	sort_3(t_list **stack_a);
 void	sort_5(t_list **stack_a, t_list **stack_b);
 void	sort_big(t_list **stack_a, t_list **stack_b);
-void	radix(t_list **stack_a, t_list **stack_b, int bits);
+void	radix(t_list **stack_a, t_list **stack_b, int max_bits);
+
 //actions
 void	swap(t_list **stack);
 void	rotate(t_list **stack);
 void	rev_rotate(t_list **stack);
-void	push_to_b(t_list **from, t_list **to);
-void	push_to_a(t_list **from, t_list **to);
+void	push_to_b(t_list **from_a, t_list **to_b);
+void	push_to_a(t_list **from_b, t_list **to_a);
 //utils
 int		ft_atoi(char *str);
 int		find_min(t_list **stack);

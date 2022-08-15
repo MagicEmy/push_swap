@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/12 14:32:10 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/12 15:50:47 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/15 19:19:29 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,51 @@
 
 void	sort_big(t_list **stack_a, t_list **stack_b)
 {
-	int	bits;
+	int	max_bits;
 	int	max;
-	
-	max = list_size(*stack_a) - 1;
-	bits = 0;
-	while (max >> bits != 0)
+	int	i;
+
+	i = 0;
+	max = list_size(*stack_a);
+	max_bits = 0;
+	while (max >> max_bits != 0)
+	{
+		max_bits++;
+	}
+	printf ("max_bits = %d \nmax = %d\n", max_bits, max);
+	while (i < max_bits)
 	{
 		if(is_sorted(*stack_a))
 			break;
-		radix(stack_a, stack_b, bits);
-		bits++;
+		printf("Hello\n");
+		radix(stack_a, stack_b, i);
+		printf("Hello again\n");
+		i++;
 	}
 }
 
-void	radix(t_list **stack_a, t_list **stack_b, int bits)
+void	radix(t_list **stack_a, t_list **stack_b, int j)
 {
 	int	len;
+	int	i;
 	
+	i = 0;
 	len = list_size(*stack_a);
 	while(len--)
 		{
-			if(((*stack_a)->index >> bits)&& 1)
-				push_to_b(stack_a, stack_b);
-			else
+			if ((((*stack_a)->index >> j) & 1) == 1)
+			{
 				rotate(stack_a);
+			}
+			else
+			{
+				push_to_b(stack_a, stack_b);
+			}
 		}
-		while (stack_b)
-			push_to_a(stack_b, stack_a);
+	while (stack_b)
+	{
+		write(1, "push_to_a\n", 10);
+		push_to_a(stack_b, stack_a);
+	}
 }
+

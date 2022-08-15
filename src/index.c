@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/10 14:19:28 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/11 19:13:35 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/15 12:54:27 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,10 @@ void	index_list(t_list *stack)
 		while (curr != NULL)
 		{
 			if (curr->number == min)
-			{
 				curr->index = i;
-				printf("[%d]", curr->index);
-				printf("number %d\n", curr->number);
-			}
 			curr = curr->next;
 		}
 		min = find_min_index(stack);
-		printf("##%d##\n", min);
 		i++;
 	}
 }

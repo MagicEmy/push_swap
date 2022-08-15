@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 18:28:09 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/11 18:40:53 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/15 19:48:54 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,3 +79,37 @@ int	check_input(t_list **stack_a, char **argv)
 	index_list(*stack_a);
 	return (1);
 }
+
+t_list	*ft_lstnew(int value)
+{
+	t_list	*new_el;
+
+	new_el = (t_list *)malloc(sizeof(t_list));
+	if (!new_el)
+		return (NULL);
+	new_el->number = value;
+	new_el->next = NULL;
+	return (new_el);
+}
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*addlast;
+
+	addlast = *lst;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	while (addlast)
+		addlast = addlast->next;
+	// addlast = ft_lstlast(*lst);
+	addlast = new;
+}
+/*
+b		a
+1		
+2
+3
+*/
