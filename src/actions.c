@@ -6,7 +6,7 @@
 /*   By: emanuela <emanuela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/03 12:46:09 by emanuela      #+#    #+#                 */
-/*   Updated: 2022/08/15 19:58:06 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/16 15:51:06 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,14 @@ void	push_to_b(t_list **from_a, t_list **to_b)
 {
 	t_list	*temp;
 
-	// if (!*to_b)
-	// {
-	// 	*to_b = ft_lstnew((*from_a)->number);
-	// }
-	ft_lstadd_back(to_b, ft_lstnew((*from_a)->number));
-	temp = (*from_a)->next;
-	// (*from_a)->next = *to_b;
-	*from_a = temp;
+	if (!*from_a)
+		return ;
+	temp = *from_a;
+	if ((*from_a)->next == NULL)
+		*from_a = NULL;
+	else
+		*from_a = (*from_a)->next;
+	ft_lstadd_front(to_b, temp);
 	write(1, "pb\n", 3);
 }
 
@@ -75,25 +75,13 @@ void	push_to_a(t_list **from_b, t_list **to_a)
 {
 	t_list	*temp;
 
-	if (*from_b == NULL)
+	if (!*from_b)
 		return ;
 	temp = *from_b;
-	*from_b = (*from_b)->next;
-	temp->next = *to_a;
-	*from_b = temp;
+	if ((*from_b)->next == NULL)
+		*from_b = NULL;
+	else
+		*from_b = (*from_b)->next;
+	ft_lstadd_front(to_a, temp);
 	write(1, "pa\n", 3);
-	return ;
-}
-
-int main(void) {
-	t_list	*a = NULL;
-	t_list *b = NULL;
-
-	for (int i = 0; i < 3; ++i) {
-		ft_lstadd_back(&a, ft_lstnew(10 - i));
-	}
-	while (a) {
-		printf("testin %d\n", a->number);
-		a = a->next;
-	}
 }

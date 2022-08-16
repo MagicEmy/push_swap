@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 18:26:42 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/15 19:43:46 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/16 18:39:23 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_list
 int		check_input(t_list **stack_a, char **argv);
 int		check_digit(char *av_x);
 int		check_doubles(t_list *stack);
+//int		check_range(t_list *stack);
 void	error_and_free(t_list *stack_a, t_list *stack_b);
 //lists
 void	insert_end(t_list **first, int val);
@@ -36,10 +37,8 @@ t_list	*list_last(t_list *stack);
 int		is_sorted(t_list *stack);
 void	print_list(t_list *stack);
 int		list_size(t_list *stack_a);
-void	list_addfront(t_list *lst, t_list *new);
 void	list_clear(t_list **lst);
-t_list	*ft_lstnew(int value);
-void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 //indexing
 void	index_list(t_list *stack);

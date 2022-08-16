@@ -6,7 +6,7 @@
 /*   By: emanuela <emanuela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/02 13:20:13 by emanuela      #+#    #+#                 */
-/*   Updated: 2022/08/15 18:55:32 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/16 18:04:43 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ int	list_size(t_list *stack_a)
 		current = current->next;
 	}
 	return (n_elements);
+}
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (lst && new)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }
 
 t_list	*list_last(t_list *stack)
@@ -63,17 +72,6 @@ void	insert_end(t_list **first, int val)
 	while (current->next != NULL)
 		current = current->next;
 	current->next = new_el;
-}
-
-void	list_addfront(t_list *lst, t_list *new)
-{
-	if (lst == NULL)
-		lst = new;
-	if (lst && new)
-	{
-		new->next = lst;
-		lst = new;
-	}
 }
 
 void	list_clear(t_list **lst)

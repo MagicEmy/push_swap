@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:22:25 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/11 19:01:27 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/16 18:39:03 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int	find_max(t_list **stack)
 int	ft_atoi(char *str)
 {
 	long int	number;
-	int			sign;
-	int			i;
+	int				sign;
+	int				i;
 
 	number = 0;
 	sign = 1;

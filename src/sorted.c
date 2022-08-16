@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:56:30 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/10 14:20:33 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/16 17:41:48 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,3 @@ void	print_list(t_list *stack)
 	}
 	printf("\n");
 }
-
-/*
--15	2	0	60
-0	2	1	3
-0	1	2	3
--15	0	2	60
-4
-4 /2
-2 3
-0 1
-*/
