@@ -6,26 +6,24 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:22:25 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/17 15:39:37 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/17 17:25:14 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	find_min_index(t_list *stack)
+int	is_sorted(t_list *stack)
 {
-	int		min;
-	t_list	*temp;
+	t_list	*tmp;
 
-	temp = stack;
-	min = INT_MAX;
-	while (temp)
+	while (stack->next)
 	{
-		if (temp->number < min && temp->index < 0)
-			min = temp->number;
-		temp = temp->next;
+		tmp = stack->next;
+		if (stack->number > tmp->number)
+			return (0);
+		stack = stack->next;
 	}
-	return (min);
+	return (1);
 }
 
 int	find_min(t_list **stack)
