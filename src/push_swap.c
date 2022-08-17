@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:56:30 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/16 18:31:57 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/17 16:37:09 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ int	main(int argc, char **argv)
 	if (!check_input(&stack_a, argv))
 		return (0);
 	sorting_tree(&stack_a, &stack_b);
-//	print_list(stack_a);
-	return (system ("leaks -q push_swap"), 0);
+//	return (system ("leaks -q push_swap"), 0);
+	return (0);
 }

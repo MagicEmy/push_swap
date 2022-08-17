@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 18:28:09 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/16 18:37:57 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/17 16:36:51 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,21 @@ int	check_digit(char *av_x)
 		}
 	}
 	return (1);
+}
+
+//		if (stack->number < -2147483648	|| stack->number > 2147483647)
+int	check_range(t_list *stack)
+{
+	while (stack)
+	{
+		if (stack->number < INT_MIN || stack->number > INT_MAX)
+		{
+			error_and_free(stack, 0);
+			return (1);
+		}
+		stack = stack->next;
+	}
+	return (0);
 }
 
 int	check_doubles(t_list *stack)
@@ -71,12 +86,10 @@ int	check_input(t_list **stack_a, char **argv)
 	x = 1;
 	while (argv[x] != NULL)
 	{
-		insert_end(stack_a, ft_atoi(argv[x]));
+		insert_end(stack_a, ft_atol(argv[x]));
 		x++;
 	}
-	if (check_doubles(*stack_a))
-		return (0);
-	if (check_range(*stack_a))
+	if (check_range(*stack_a) || check_doubles(*stack_a))
 		return (0);
 	index_list(*stack_a);
 	return (1);

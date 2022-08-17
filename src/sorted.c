@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:56:30 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/16 17:41:48 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/17 15:34:03 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	is_sorted(t_list *stack)
 	return (1);
 }
 
-//test printing
 void	print_list(t_list *stack)
 {
 	t_list	*curr;
@@ -34,7 +33,7 @@ void	print_list(t_list *stack)
 	curr = stack;
 	while (curr != NULL)
 	{
-		printf("%d ", curr->number);
+		printf("%li ", curr->number);
 		curr = curr->next;
 	}
 	printf("\n");

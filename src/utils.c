@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:22:25 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/16 18:39:03 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/17 15:39:37 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ int	find_max(t_list **stack)
 	return (max);
 }
 
-int	ft_atoi(char *str)
+long int	ft_atol(char *str)
 {
 	long int	number;
-	int				sign;
-	int				i;
+	int			sign;
+	int			i;
 
 	number = 0;
 	sign = 1;
@@ -79,7 +79,7 @@ int	ft_atoi(char *str)
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
 		number *= 10;
-		number += (int)str[i] - '0';
+		number += (long int)str[i] - '0';
 		i++;
 	}
 	return (number * sign);

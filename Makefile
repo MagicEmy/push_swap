@@ -9,16 +9,17 @@ SRC		:=	push_swap.c \
 			actions.c \
 			utils.c \
 			index.c \
-			sort_big.c
+			sort_big.c \
+			radix.c
 
 OBJ		:= $(SRC:%.c=obj/%.o)
 CC		:= gcc
-CFLAGS	:= -Wall -Wextra -Werror
+CFLAGS	:= -Wall -Wextra -Werror #-g -fsanitize=address
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADERS)
-	$(CC) -o $(NAME) $(OBJ) $(INC)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(INC)
 
 obj/%.o: src/%.c
 	mkdir -p obj

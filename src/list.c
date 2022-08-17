@@ -6,7 +6,7 @@
 /*   By: emanuela <emanuela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/02 13:20:13 by emanuela      #+#    #+#                 */
-/*   Updated: 2022/08/16 18:04:43 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/17 15:17:53 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_list	*list_last(t_list *stack)
 	return (last);
 }
 
-void	insert_end(t_list **first, int val)
+void	insert_end(t_list **first, long int val)
 {
 	t_list	*new_el;
 	t_list	*current;
