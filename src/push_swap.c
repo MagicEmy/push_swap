@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	atexit(checkleaks);
+//	atexit(checkleaks);
 	if (argc < 2)
 		return (0);
 	if (!check_input(&stack_a, argv))
