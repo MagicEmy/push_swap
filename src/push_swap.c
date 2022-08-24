@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:56:30 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/18 20:18:43 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/22 17:11:37 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	checkleaks(void)
 	system("leaks -q push_swap");
 }
 
+//	atexit(checkleaks);
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -55,7 +57,6 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-//	atexit(checkleaks);
 	if (argc < 2)
 		return (0);
 	if (!check_input(&stack_a, argv))

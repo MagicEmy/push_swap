@@ -6,7 +6,7 @@
 /*   By: emanuela <emanuela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/02 13:20:13 by emanuela      #+#    #+#                 */
-/*   Updated: 2022/08/17 15:17:53 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/22 12:35:01 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,10 @@ void	insert_end(t_list **first, long int val)
 	current = *first;
 	new_el = (t_list *)malloc(sizeof(t_list));
 	if (!new_el)
-		return ;
+	{
+		end_free(*first, 0);
+		exit(0);
+	}
 	new_el->number = val;
 	new_el->index = -1;
 	new_el->next = NULL;

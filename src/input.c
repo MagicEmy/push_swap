@@ -6,7 +6,7 @@
 /*   By: emlicame <emlicame@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 18:28:09 by emlicame      #+#    #+#                 */
-/*   Updated: 2022/08/18 20:21:24 by emlicame      ########   odam.nl         */
+/*   Updated: 2022/08/23 16:51:05 by emlicame      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	check_digit(char *av_x)
 	i = 0;
 	if (!av_x)
 		return (0);
-	if (av_x[i] == '-')
+	if (av_x[i] == '-' || av_x[i] == '+')
 		i++;
 	while (av_x[i] != '\0')
 	{
