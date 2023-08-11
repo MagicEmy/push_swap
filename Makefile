@@ -17,17 +17,20 @@ CFLAGS	:= -Wall -Wextra -Werror # -g -fsanitize=address
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADERS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(INC)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(INC)
+	@echo "Done"
 
 obj/%.o: src/%.c
 	@mkdir -p obj
-	$(CC) $(INC) $(CFLAGS) -o $@ -c $<
+	@$(CC) $(INC) $(CFLAGS) -o $@ -c $<
 	
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@rm -rf obj
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "Clean"
 
 re: fclean all
 

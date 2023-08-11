@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   list.c                                             :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: emanuela <emanuela@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2022/08/02 13:20:13 by emanuela      #+#    #+#                 */
-/*   Updated: 2022/08/22 12:35:01 by emlicame      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   list.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emlicame <emlicame@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/02 13:20:13 by emanuela          #+#    #+#             */
+/*   Updated: 2023/08/11 16:58:25 by emlicame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	insert_end(t_list **first, long int val)
 	new_el = (t_list *)malloc(sizeof(t_list));
 	if (!new_el)
 	{
-		end_free(*first, 0);
+		error_and_free(*first, 0);
 		exit(0);
 	}
 	new_el->number = val;
